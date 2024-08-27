@@ -1,0 +1,84 @@
+package svømmehal;
+
+import java.util.Scanner;
+
+public class Svømmehalhjemmeside {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner (System.in);
+	//admin cred
+	String  superBruger = "Admin";
+	String superKoder = "Admin";
+
+	//user cred
+	String [] brugernavn = { "Zahaa", "O-dawg123", "Phillip", "Jan"};
+	String [] koder = {"Zahaa123", "Omar123", "Phillip123", "Jan123"};
+	
+	//Tilmeldte bruger
+	String [] deltager = {"Zahaa", "Omar", "Phillip", "Jan"};
+	
+	System.out.println("Velkommen til Zahaas svømmehal");
+	System.out.println("Ønsker du at logge ind: Tast 1. Ønsker du at tilmelde dig: Tast 2");
+	
+	int loginValg = input.nextInt();
+		
+	
+	if(loginValg == 1) {
+		
+		
+			System.out.println("Indtast dit brugernavn");
+			String brugerLogin = input.next();
+			System.out.println("Indtast din adgangskode");
+			String brugerKode = input.next();
+		
+			if(brugerLogin.equals(superBruger) && brugerKode.equals(superKoder)) {
+			System.out.println("Du er nu logget ind som administrator");
+			System.out.println("Ønsker du at se en liste over deltager: Tast 1.");
+			System.out.println("Ønsker du at se en slette listen: Tast 2");
+			int inputValg = input.nextInt();
+			
+			if(inputValg == 1) {
+				for (int i = 0;i < deltager.length; i++) {
+				System.out.println(deltager[i]);
+			} 
+				
+			} else if (inputValg == 2) {
+					System.out.println("Liste slettet");
+			} else {
+					System.out.println("Cool GJ");
+					}
+			
+			} else if (brugerLogin.equals(brugernavn) && brugerKode.equals(koder)) {
+				System.out.println("Hej " + brugerLogin + "Du er nu logget ind");
+				
+				System.out.println("Vil du se om du er deltaget noget hold: Tast 1");
+				int holdDeltaget = input.nextInt();
+				
+				System.out.println("Du er deltaget på hold: Zahaas Bitches");
+			}
+		} 
+	
+		else {
+			System.out.println("Skøn beslutning. For at tilmelde dig skal jeg bruge et par informationer om dig");
+			
+			System.out.println("Hvad er dit navn");
+			String deltagerNavn = input.next();
+			
+			System.out.println("Hvor gammel er du");
+			int deltagerAlder = input.nextInt();
+			
+			System.out.println("Hvor højt er dit svømme niveau");
+			System.out.println("Nybegynver, moderat, advanceret");
+			String deltagerNiveau = input.next();
+			
+			System.out.println("Tak for din besvarelse. Du er nu tilmeldt");
+			
+			
+		}
+		
+		
+	}
+		
+	}
+
